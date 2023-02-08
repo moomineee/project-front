@@ -5,4 +5,30 @@ https://templatemo.com/tm-561-purple-buzz
 
 */
 
-
+#div_root{
+    margin:auto;
+    width:auto;
+  }
+  
+  #div_img{
+    width:40%;
+    height:300px;
+    float:left;
+    background-color:#819FF7;
+    text-align:left;
+  }
+  
+  #div_col{
+    width:10%;
+    height:auto;
+    float:left;
+    background-size:100%;
+    text-align:center;
+  }
+  
+  #div_spec{
+    width:40%;
+    height:300px;
+    float:left;
+    background-color:#819FF7;
+  }

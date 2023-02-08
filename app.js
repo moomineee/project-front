@@ -4,20 +4,20 @@ const app = express();
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
-
+    res.send
     res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/about", (req, res) => {
-    res.sendFile(__dirname + "/about.html");
+app.get("/login", (req, res) => {
+    res.sendFile(__dirname + "/login.html");
 });
 
-app.get("/contact", (req, res) => {
-    res.sendFile(__dirname + "/contact.html");
+app.get("/exhibitions", (req, res) => {
+    res.sendFile(__dirname + "/exhibitions.html");
 });
 
-app.get("/pricing", (req, res) => {
-    res.sendFile(__dirname + "/pricing.html");
+app.get("/security", (req, res) => {
+    res.sendFile(__dirname + "/security.html");
 });
 
 app.use((req, res) => {
