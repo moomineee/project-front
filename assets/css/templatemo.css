@@ -76,22 +76,20 @@ p, a {font-weight: 400;}
 
 #div_root{
   display: flex;
-  margin:auto;
-  width:auto;
+  margin: auto;
+  width: auto;
 }
 
 #div_img{
-  width:50%;
-  height:auto;
-  float:left;
+  width: auto;
+  height: auto;
   background: color #878787;
-  text-align:left;
+  text-align: left;
 }
 
 #div_spec{
-  width:50%;
-  height:auto;
-  float:left;
+  width: auto;
+  height: auto;
   background-color:#819FF7;
 }
 
