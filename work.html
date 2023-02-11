@@ -275,7 +275,7 @@ https://templatemo.com/tm-561-purple-buzz
         let html = '';
         contents.result.content.forEach(element => {
           html += `
-          <a href="work-single.html?id=${element.id}" class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
+          <a href=${element.price !== "무료" ? "work-single.html?id="+element.id : element.detailInfoUrl} target=${element.price === "무료" ? "_blank" : "_self"} class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
               <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
                   <img class="card-img-top" src=${element.mainImgUrl} alt="...">
                   <div class="card-body">
@@ -349,10 +349,11 @@ https://templatemo.com/tm-561-purple-buzz
             fetch(`http://localhost:8080/api/v1/exhibitions?sort=id&${p}`)
       .then((res) => res.json())
       .then((contents) => {
+        console.log(contents.result.content)
         let html = '';
         contents.result.content.forEach(element => {
           html += `
-          <a href="work-single.html?id=${element.id}" class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
+          <a href=${element.price !== "무료" ? "work-single.html?id="+element.id : element.detailInfoUrl} target=${element.price === "무료" ? "_blank" : "_self"} class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
             <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
                   <img class="card-img-top" src=${element.mainImgUrl} alt="...">
                   <div class="card-body">
@@ -419,9 +420,10 @@ https://templatemo.com/tm-561-purple-buzz
       .then((res) => res.json())
       .then((contents) => {
         let html = '';
+        console.log(contents.result)
         contents.result.content.forEach(element => {
           html += `
-          <a href="work-single.html?id=${element.id}" class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
+          <<a href=${element.price !== "무료" ? "work-single.html?id="+element.id : element.detailInfoUrl} target=${element.price === "무료" ? "_blank" : "_self"} class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
             <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
                   <img class="card-img-top" src=${element.mainImgUrl} alt="...">
                   <div class="card-body">

@@ -77,18 +77,18 @@ p, a {font-weight: 400;}
 #div_root{
   display: flex;
   margin: auto;
-  width: auto;
+  width: 100%;
 }
 
 #div_img{
-  width: auto;
+  width: 50%;
   height: auto;
   background: color #878787;
   text-align: left;
 }
 
 #div_spec{
-  width: auto;
+  width: 50%;
   height: auto;
   background-color:#819FF7;
 }
