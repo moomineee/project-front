@@ -198,3 +198,24 @@ async function renderExhibisionForwork() {
     const div = document.getElementById('exhibision_container');
     div.innerHTML = html;
   }
+
+
+  // 전시회 검색 기능
+  function searchExhibition() {
+    if (searchInput.value !== "") {
+      newArr = exhitibionArray.filter((el) =>
+        el.name.toLowerCase().includes(searchInput.value.toLowerCase())
+      );
+  
+      searchResult.innerHTML = "";
+  
+      newArr.map((contents) => {
+        let result = document.createElement("div");
+        searchResult.appendChild(result);
+        result.innerHTML = `<div><img src="${contents.mainImgUrl}"/></div><div>${contents.name}<div>${contents.description}</div></div>`;
+      });
+    } else {
+      searchResult.innerHTML = "";
+    }
+  }
+
