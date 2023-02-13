@@ -42,7 +42,7 @@
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">홈</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">전시회</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="exhibition.html">전시회</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html">함께 보러 가요</a>
@@ -92,45 +92,22 @@
         <!-- Start Comment -->
         <div class="row justify-content-center">
             <div class="worksingle-comment-heading col-8 m-auto pb-3">
-                <h4 class="h5">리뷰</h4>
+                <h4 class="worksingle-comment-heading h4 pb-3 mt-3 fw-bold light-300 typo-space-line">리뷰</h4>
             </div>
         </div>
         <div id="comment-container">
 
         </div>
-        <!-- <div class="row pb-4">
-            <div class="worksingle-comment-body col-md-8 m-auto">
-                <div class="d-flex">
-                    <div class="comment-body">
-                        <div class="comment-header d-flex justify-content-between ms-3">
-                            <div class="header text-start">
-                                <h5 class="h6">John Doe</h5>
-                                <p class="text-muted light-300">10 mins ago</p>
-                            </div>
-                            <a href="#" class="text-decoration-none text-secondary"><i
-                                    class='bx bxs-share me-2'></i>Reply</a>
-                        </div>
-                        <div class="footer">
-                            <div class="card-body border ms-3 light-300">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
-        <!-- End Comment -->
+        <!-- 리뷰 등록 -->
         <div class="row pb-4">
             <div class="worksingle-comment-footer col-lg-8 m-auto">
-                <h4 class="h5">리뷰 등록</h4>
+                <h4 class="worksingle-comment-heading h4 pb-3 mt-3 fw-bold light-300 typo-space-line">리뷰 등록</h4>
                 <!-- <form class="col-md-12 m-auto" method="POST" action="#" role="form"> -->
 
-                <div class="form-group">
-                    <label class="pb-2 pt-sm-0 pt-4 light-300" for="inputmessage">Your Comment</label>
-                    <textarea class="form-control form-control-lg light-300" id="inputmessage" name="inputmessage" placeholder="Your Comment" rows="5"></textarea>
+                <div class="form-group mt-3">
+                    <textarea class="form-control form-control-lg light-300" id="inputtitle" name="inputtitle" placeholder="제목을 입력하세요" rows="1"></textarea>
+                    <textarea class="form-control form-control-lg light-300" id="inputmessage" name="inputmessage" placeholder="내용을 입력하세요" rows="5"></textarea>
                 </div>
                 <select id="starValue">
                     <option value="1">&#11088;</option>
@@ -142,7 +119,7 @@
 
                 <div class="form-row pt-2">
                     <div class="col-md-12 col-10 text-end">
-                        <button type="button" onclick=postWithAuth() class="btn btn-secondary text-white px-md-4 px-2 py-md-3 py-1 radius-0 light-300">Send Message</button>
+                        <button type="button" onclick=postWithAuth() class="btn btn-secondary text-white px-md-4 px-2 py-md-3 py-1 radius-0 light-300">리뷰 등록</button>
                     </div>
                 </div>
                 <!-- </form> -->
@@ -211,7 +188,7 @@
                             </li>
                             <li class="pb-2">
                                 <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a
-                                    class="text-decoration-none text-light py-1" href="work.html">Work</a>
+                                    class="text-decoration-none text-light py-1" href="exhibition.html">Work</a>
                             </li>
                             <li class="pb-2">
                                 <i class='bx-fw bx bxs-chevron-right bx-xs'></i></i><a
@@ -340,13 +317,13 @@
                             <h6 class>관람연령 &nbsp;&nbsp;${contents.result.ageLimit}<h6><br>
                             <h6 class>가격&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${contents.result.price}<h6><br>
                             <div>
-                                <button id="bookmarkBtn" style="margin-left:1rem; border:none;">북마크</button><span style=''>&#128278;</span>
+                                <span style=''>&#128278;</span><button id="bookmarkBtn" style="margin-left:1rem; border:none;">북마크</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center">
+                <div class="worksingle-content col-lg-8 m-auto mt-5 text-left justify-content-center">
                     <h4 class="worksingle-heading h4 pb-3 fw-bold light-300 typo-space-line">공지사항</h4>
                         <p>${contents.result.detailInfo}</p>
                 </div>
@@ -356,7 +333,7 @@
                 <div><img src=${contents.result.detailInfoImgUrl.split(',')[0]} /></div>
                 </div>
                            
-                <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center">
+                <div class="worksingle-content col-lg-8 m-auto mt-3 text-left justify-content-center">
                     <h4 class="worksingle-heading h4 pb-3 fw-bold light-300 typo-space-line">안내사항</h4>
                         <p>${contents.result.notice}</p>
                         <div>${
@@ -409,18 +386,20 @@
                                 <div class="comment-body">
                                         <div class="comment-header d-flex justify-content-between ms-3">
                                             <div class="header text-start">
-                                                <h5 class="h6">${content.userName}</h5>
-                                                <p class="text-muted light-300">${content.createdAt}</p>
-                                                <p class="text-muted light-300">${
-                                                    // content.star
-                                                    Array.from({ length: content.star }, (_, i) => `<span style=''>&#11088;</span>`).join('')
-                                                }</p>
+                                                <div class="h6">${content.userName} ${
+                                                        // content.star
+                                                        Array.from({ length: content.star }, (_, i) => `<span style=''>&#11088;</span>`).join('')
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="footer">
-                                            <div>${content.title}</div>
+                                        <div class="footer" style="width: 53rem;">
                                             <div class="card-body border ms-3 light-300">
-                                                ${content.content}
+                                                <div class= "card-title fw-bold">${content.title}</div>
+                                                <div class= m-auto mt-4>${content.content}</div>
+                                            </div>
+                                            <div style = text-align:right>
+                                            <p class="text-muted light-300">${content.createdAt}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -447,6 +426,7 @@
             id = query[1]
         }
     }
+    const textArea1 = document.getElementById('inputtitle')
     const textArea = document.getElementById('inputmessage')
     const selectedStar = document.getElementById('starValue')
     try {
@@ -455,10 +435,10 @@
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InRlc3RAdGVzdC50ZXN0IiwiaWF0IjoxNjc2MDkzODg2LCJleHAiOjE2NzYwOTc0ODZ9.yt7ftwLJOAJoTf4oePwPhBesg4Aze8h-qHTL2GNiJuA`
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InRlc3RAdGVzdC50ZXN0IiwiaWF0IjoxNjc2MjYxOTU5LCJleHAiOjE2NzYyNjU1NTl9.LIQeXAnDflDBDkAmb9KpbAHQCy-kMsAnwqvc95dOo_Q`
             },
             body: JSON.stringify({
-                title: '제목',
+                title: textArea1.value,
                 content: textArea.value,
                 star: selectedStar.value,
                 visitedDate: new Date()

@@ -13,7 +13,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/exhibitions", (req, res) => {
-    res.sendFile(__dirname + "/exhibitions.html");
+    res.sendFile(__dirname + "/exhibition.html");
 });
 
 app.get("/security", (req, res) => {
